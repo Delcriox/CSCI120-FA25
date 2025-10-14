@@ -1,23 +1,17 @@
-#include <cstdio>
-#include <vector>
-#include <string>
+#include<cstdio>
 
+struct cart_point {
+    int x;
+    int y;
+};
 
-
-
-using std::vector;
-
-char vegtible(char a, char b) {
-    return a + b;
-
+void print_cart(cart_point point) {
+    printf("(%d, %d)", point.x, point.y);
+    return ;
 }
 
 int main() {
-    char a = 127;
-    char b = 1;
-    printf("%d\n", vegtible(a,b));
-    printf("hello world\n");
-    vector<int> squid = {0,1,2,3,4,5};
-    printf("%d", squid.at(0));
+    cart_point point_a = cart_point {5,2};
+    print_cart(point_a);
     return 0;
 }
