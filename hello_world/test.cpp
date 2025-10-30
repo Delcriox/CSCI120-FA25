@@ -1,17 +1,26 @@
 #include<cstdio>
+#include<vector>
+using std::vector;
 
-struct cart_point {
-    int x;
-    int y;
-};
-
-void print_cart(cart_point point) {
-    printf("(%d, %d)", point.x, point.y);
-    return ;
+vector<int> push_down(vector<int> v, int e) {
+    v.insert(v.begin(), e);
+    
+    return v;
 }
 
-int main() {
-    cart_point point_a = cart_point {5,2};
-    print_cart(point_a);
-    return 0;
+vector<int> pop_up(vector<int> v) {
+    printf("popped %d\n", v[0]);
+    v.erase(v.begin());
+    return v;
+}
+
+int main () {
+    vector<int> l = {};
+    l = push_down(l, 5);
+    l = push_down(l, 6);
+    printf("%d, %d\n", l[0], l[1]);
+
+    l = pop_up(l);
+    printf("%d\n", l[0]);
+    return 0;   
 }
