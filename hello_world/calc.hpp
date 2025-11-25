@@ -8,6 +8,8 @@ using std::printf;
 stack arithmatic
 single stack
 
+prefix stacking (unrestricted operations)
+
 encode all operations b/c stack of int
 
 ops: 
