@@ -1,7 +1,9 @@
 #include "calc.hpp"
 
 int main() {
+    // need a stack b/c stacked BASED calculator
     stack<int> st = {};
+
 
     st.push(9);
     st.push(9998);
@@ -12,12 +14,11 @@ int main() {
     st = evaluate(st);
 
     printf("result: %d\n", st.top());
-    st.pop();
-    printf("result %d\n", st.top());
     return 0;
 }
 
 stack<int> evaluate (stack<int> st) {
+    
     int x = st.top();
     st.pop();
     
@@ -41,20 +42,42 @@ stack<int> evaluate (stack<int> st) {
         st.pop();
         int z = st.top();
         st.pop();
+        if (st.empty()) {
         st.push(subtraction(y,z));
+    } else {
+        int temp = st.top();
+            st.pop();
+            st.push(subtraction(y,z));
+            st.push(temp);
+            return evaluate(st);
+        }
     } else if (x == 9997) {
         int y = st.top();
         st.pop();
         int z = st.top();
         st.pop();
+        if (st.empty()) {
         st.push(multiplication(y,z));
+        } else {
+            int temp = st.top();
+            st.pop();
+            st.push(multiplication(y,z));
+            st.push(temp);
+            return evaluate(st);
+        }
     } else if (x == 10001) {
         int y = st.top();
         st.pop();
         int z = st.top();
         st.pop();
+        if (st.empty()) {
         st.push(division(y,z));
     } else {
+        int temp = st.top();
+            st.pop();
+            st.push(division(y,z));
+            st.push(temp);
+            return evaluate(st);
         printf("FAIL\n");
     }
 
@@ -62,7 +85,7 @@ stack<int> evaluate (stack<int> st) {
 }
 
 int addition(int l, int r)          { return l + r; }
-int subtraction (int l, int r)      { return l + r; }
-int multiplication (int l, int r)   { return l + r; }
-int division (int l, int r)         { return l + r; }
+int subtraction (int l, int r)      { return l - r; }
+int multiplication (int l, int r)   { return l * r; }
+int division (int l, int r)         { return l / r; }
     
