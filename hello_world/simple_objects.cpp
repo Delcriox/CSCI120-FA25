@@ -8,7 +8,7 @@ int main() {
     (b, c) = squid.road_out();
 
     std::printf("b = %d, c = %d", b, c);
-    return 0;
+    return ;
 }
 
 void A::road_in(int z, int squid){
@@ -18,7 +18,7 @@ void A::road_in(int z, int squid){
 }
 
 (int, int) A::road_out(){
-        return (b,c);
+        return b+c;
 }
 
 A::A() {
