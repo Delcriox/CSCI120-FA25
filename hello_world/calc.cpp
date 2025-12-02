@@ -42,8 +42,9 @@ stack<int> evaluate (stack<int> st)
         st.pop();
         int z = st.top();
         st.pop();
-        st.push(subtraction(y,z));
         if (st.empty()) {
+            st.push(subtraction(y,z));
+        } else {
             int temp = st.top();
             st.pop();
             st.push(subtraction(y,z));
