@@ -8,5 +8,5 @@ private:
 public:
     A();
     void road_in(int, int);
-    in road_out();
+    int road_out();
 };
