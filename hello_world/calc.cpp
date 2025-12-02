@@ -4,7 +4,6 @@ int main() {
     // need a stack b/c stacked BASED calculator
     stack<int> st = {};
 
-
     st.push(9);
     st.push(9998);
     st.push(5);
@@ -17,7 +16,7 @@ int main() {
     return 0;
 }
 
-stack<int> evaluate (stack<int> st) 
+stack<int> evaluate (stack<int> st) {
     
     int x = st.top();
     st.pop();
@@ -78,11 +77,13 @@ stack<int> evaluate (stack<int> st)
             st.push(division(y,z));
             st.push(temp);
             return evaluate(st);
+        } 
+    } else {
         printf("FAIL\n");
-        }
+    }
 
     return st;
-    }
+}
 
 int addition(int l, int r)          { return l + r; }
 int subtraction (int l, int r)      { return l - r; }
