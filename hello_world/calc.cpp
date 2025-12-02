@@ -36,40 +36,42 @@ stack<int> evaluate (stack<int> st)
             st.push(addition(y,z));
             st.push(temp);
             return evaluate(st);
-        } else if (x == 9998) {
-            int y = st.top();
-            st.pop();
-            int z = st.top();
-            st.pop();
-        } else if (st.empty()) {
+        } 
+    } else if (x == 9998) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
         st.push(subtraction(y,z));
-        } else if {
+        if (st.empty()) {
             int temp = st.top();
             st.pop();
             st.push(subtraction(y,z));
             st.push(temp);
             return evaluate(st);
-        } else if (x == 9997) {
-            int y = st.top();
-            st.pop();
-            int z = st.top();
-            st.pop();
-        } else if (st.empty()) {
-        st.push(multiplication(y,z));
-        } else if {
+        }
+    } else if (x == 9997) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        if(st.empty()) {
+            st.push(multiplication(y,z));
+        } else {
             int temp = st.top();
             st.pop();
             st.push(multiplication(y,z));
             st.push(temp);
             return evaluate(st);
-        } else if (x == 10001) {
-            int y = st.top();
-            st.pop();
-            int z = st.top();
-            st.pop();
-        } else if (st.empty()) {
+        }
+    } else if (x == 10001) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        if (st.empty()) {
             st.push(division(y,z));
-        } else if {
+        } else {
             int temp = st.top();
             st.pop();
             st.push(division(y,z));
