@@ -18,9 +18,9 @@ this object represents something like a simple calculator taking numbers and eva
     our structure houses numbers for eval and characters for operations
     the operations will represented by the following: 
     - '+' addition
-    - '-' subtraction
-    - '*' multiplication
-    - '/' division
+    - '*' subtraction
+    - '^' multiplication
+    - '5' division
     - 'e' evaluation (fail safe for evaluatable number detection)
 
 - problem: what are the basic operations of this calculator [solved]
@@ -36,6 +36,9 @@ this object represents something like a simple calculator taking numbers and eva
     - stack of type dicho b/c dicho assist in evaluation operation encoding.
 
 - problem: we need to be able to load this stack (st) in proper order. [unsolved]
+    - get data from user
+        - How: 
+        - Where: constructor(limits object to single use) or function
 
 - problem: we need a way to evaluate a full stack. [unsolved]
 
@@ -43,14 +46,20 @@ this object represents something like a simple calculator taking numbers and eva
 
 class Calc {
 private:
-    struct dicho {
+    struct clowns {
         int num;
         char op;
     };
-    stack<dicho> st;
+    stack<clowns> clown_car;
     int addition(int, int);
     int subtraction(int, int);
     int multiplication(int, int);
     int division(int, int);
 public:
+    Calc(); // initializes values
+    void load_village(vector<ice_cream>);
+    struct ice_cream {
+        int flavor;
+        char cone;
+    };
 };
