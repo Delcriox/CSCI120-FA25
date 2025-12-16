@@ -28,7 +28,7 @@ vector<Calc::clowns> Calc::map_ice_clown(vector<Calc::ice_cream> x) {
     for(int i=0; i<x.size(); i=i+1) {
         // the set in the case of x.size = 3 is [i=0,i=1,i=2,TERMINATE]
         // for each ice cream, make a new clown
-        clowns c(x.at(i)flavor, x.at(i)cone);
+        clowns c(x.at(i).flavor, x.at(i).cone);
         r.push_back(c);
         printf("%d, %c\n", c.num, c.op);
     }
