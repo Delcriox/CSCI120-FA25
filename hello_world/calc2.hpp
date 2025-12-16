@@ -1,6 +1,8 @@
 #include <cstdio>
 #include <stack>
+#include <vector>
 
+using std::vector;
 using std::stack;
 using std::printf;
 
@@ -32,8 +34,8 @@ this object represents something like a simple calculator taking numbers and eva
     - evaluation: symbolizes number for evaluation, termination operation
 
 - problem: what structure defines the equationns integrity  preserving order. [solved]
-    stack<dicho> st.
-    - stack of type dicho b/c dicho assist in evaluation operation encoding.
+    stack<clowns> st.
+    - stack of type clowns b/c clowns assist in evaluation operation encoding.
 
 - problem: we need to be able to load this stack (st) in proper order. [unsolved]
     - get data from user
@@ -49,6 +51,10 @@ private:
     struct clowns {
         int num;
         char op;
+        clowns(int a, char b) {
+            num = a;
+            op = b;
+        }
     };
     stack<clowns> clown_car;
     int addition(int, int);
@@ -56,10 +62,17 @@ private:
     int multiplication(int, int);
     int division(int, int);
 public:
-    Calc(); // initializes values
-    void load_village(vector<ice_cream>);
     struct ice_cream {
         int flavor;
         char cone;
+        ice_cream(int a, char b) {
+            flavor = a;
+            cone = b;
+        }
     };
+    // tool function
+    vector<clowns> map_ice_clown(vector<ice_cream>);
+
+    // loads the stack
+    void german_village_clown_school(vector<ice_cream>);
 };
