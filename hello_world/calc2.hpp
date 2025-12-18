@@ -43,7 +43,8 @@ this object represents something like a simple calculator taking numbers and eva
         - Where: constructor(limits object to single use) or function
 
 - problem: we need a way to evaluate a full stack. [unsolved]
-
+    - solution: calculator assignment
+    
 */
 
 class Calc {
@@ -56,7 +57,7 @@ private:
             op = b;
         }
     };
-    stack<clowns> clown_car;
+    stack<clowns> clown_bakery;
     int addition(int, int);
     int subtraction(int, int);
     int multiplication(int, int);
