@@ -76,4 +76,7 @@ public:
 
     // loads the stack
     void german_village_clown_school(vector<ice_cream>);
+
+    // evaluates a stack
+    stack<int> evaluate( stack<int> );
 };

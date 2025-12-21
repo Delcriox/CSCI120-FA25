@@ -37,4 +37,75 @@ vector<Calc::clowns> Calc::map_ice_clown(vector<Calc::ice_cream> x) {
     }
     return r;
 }
+stack<int> evaluate (stack<int> st) {
+    int x = st.top();
+    st.pop();
+    
+    if (x == +) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        // check stack to see if anything is left
+        if (st.empty()) {
+            st.push(addition(y,z));
+        } else {
+            int temp = st.top();
+            st.pop();
+            st.push(addition(y,z));
+            st.push(temp);
+            return evaluate(st);
+        } 
+    } else if (x == *) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        if (st.empty()) {
+            st.push(subtraction(y,z));
+        } else {
+            int temp = st.top();
+            st.pop();
+            st.push(subtraction(y,z));
+            st.push(temp);
+            return evaluate(st);
+        }
+    } else if (x == ^) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        if(st.empty()) {
+            st.push(multiplication(y,z));
+        } else {
+            int temp = st.top();
+            st.pop();
+            st.push(multiplication(y,z));
+            st.push(temp);
+            return evaluate(st);
+        }
+    } else if (x == 5) {
+        int y = st.top();
+        st.pop();
+        int z = st.top();
+        st.pop();
+        if (st.empty()) {
+            st.push(division(y,z));
+        } else {
+            int temp = st.top();
+            st.pop();
+            st.push(division(y,z));
+            st.push(temp);
+            return evaluate(st);
+        } 
+    } else {
+        printf("FAIL\n");
+    }
 
+    return st;
+}
+
+int addition(int l, int r)          { return l + r; }
+int subtraction (int l, int r)      { return l - r; }
+int multiplication (int l, int r)   { return l * r; }
+int division (int l, int r)         { return l / r; }
