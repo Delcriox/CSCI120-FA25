@@ -37,6 +37,9 @@ vector<Calc::clowns> Calc::map_ice_clown(vector<Calc::ice_cream> x) {
     }
     return r;
 }
+
+// code from last calculator assignment w/ operation representation changed.
+
 stack<int> evaluate (stack<int> st) {
     int x = st.top();
     st.pop();
